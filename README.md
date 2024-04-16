@@ -23,14 +23,14 @@ Data samples include radar echo, additive gaussian noise, and fluctuations on ra
   <img src="https://github.com/oscarb-TUM/Deep-Learning-Based-Space-Debris-Classification/assets/82709788/4f74f183-0bec-47be-93fb-a97959d44e83" width="49%">
 </p>
 
-### Example Radar-Cross-Section (RCS) Signatures as 3D Plot
+### Example Radar-Cross-Section (RCS) Signatures as 3D Plot in **dBsm**
 
 <table>
   <tr>
     <td>Tall Cylinder</td>
-    <td>Wide Object</td>
-    <td>Tall Sphere</td>
-    <td>Large Plate</td>
+    <td>Wide Cone</td>
+    <td>Sphere (r = 0.05m)</td>
+    <td>Plate (r = 0.05m)</td>
   </tr>
   <tr>
     <td><img src="https://github.com/oscarb-TUM/Deep-Learning-Based-Space-Debris-Classification/assets/82709788/a65f32ee-7a94-4378-bb41-eb76dbb42635" alt="3d_tall_cyl"></td>
@@ -70,6 +70,11 @@ Through extensive experimentation and hyperparameter tuning, we achieved accurac
 
 The simulation data also factors in real-world challenges in the form of **additive Gaussian noise** and **RCS signature fluctuations** due to object vibrations. For further robustness evaluations, we tested for radar-specific noise on pretrained models by distorting the test set with various types of **signal occlusion, clutter, and sensor saturation**. The results underscore the effectiveness of applying decibel transformations before feature extraction. Models trained on decibel signals appear to benefit from the noise reduction capabilities of the logarithmic scale, improving clarity in radar distortions like clutter and saturation. Yet again, Full-Attention Transformer trained on raw signals defies this trend of better decibel efficacy, showcasing unmatched resistance to occlusion and various frequency-based clutter scenarios, outperforming every other examined model.
 
+**Occlusion:** Implemented through Random Point Dropouts and Random Window Dropout techniques.
+
+**Sensor Saturation:** Assessed using Percentile Saturation methods.
+
+**Clutter Noise:** Evaluated by introducing Random Peaks (Anomalies) and Sinusoidal Clutter signals.
 
 ## Impact
 
