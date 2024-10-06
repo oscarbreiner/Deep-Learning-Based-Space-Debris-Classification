@@ -1,0 +1,7 @@
+name: MLP
+
+input_size: 501
+num_classes: 4
+# layer_sizes: [256, 2]
+layer_sizes: [256, 128]
+dropout_rate: 0.5

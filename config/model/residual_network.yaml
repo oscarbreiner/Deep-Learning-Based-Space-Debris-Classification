@@ -1,0 +1,25 @@
+defaults:
+  - _self_
+
+name: residual_network
+num_classes: 4
+apply_he: true
+fc_units: 256
+res_layers_per_block: [2, 2, 2, 2]
+activation: silu
+use_noise: False
+noise_stddev: 0.1
+in_out_channels: [[32, 64], [64, 128], [128, 256], [256, 512]]
+
+# Define in_out_channels as a list of options for multi-run
+# in_out_channels:
+#   - name: option_1
+#     channels: 
+#       - [32, 64]
+#       - [64, 128]
+#       - [128, 256]
+#   - name: option_2
+#     channels:
+#       - [64, 128]
+#       - [128, 256]
+#       - [256, 512]

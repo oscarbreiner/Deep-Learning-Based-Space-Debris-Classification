@@ -1,0 +1,46 @@
+defaults:
+  - data: radar_echo_return_simple_shapes
+  - task: classification
+  - hydra: default
+  - _self_
+  - model: lstm
+
+note: ""
+
+iteration: 1
+
+n_classes: 4
+#test_method: zero_sampling
+test_method: cluster_sinusoid
+
+# Define a map of model types to their respective paths
+model_paths:
+  lstm_vanilla: /nfs/homedirs/breiner/synthetic-data/dl_pipeline/saved_models/model_lstm_vanilla.ckpt
+  lstm_bidirectional: /nfs/homedirs/breiner/synthetic-data/dl_pipeline/saved_models/model_lstm_bidirectional.ckpt
+  mlp: /nfs/homedirs/breiner/synthetic-data/dl_pipeline/saved_models/model_MLP_no_dropout.ckpt
+  transformer: "/nfs/homedirs/breiner/synthetic-data/dl_pipeline/saved_models/continued_model_Time_transformer_1e-05_db=True.ckpt"
+  residual_network: /nfs/homedirs/breiner/synthetic-data/dl_pipeline/saved_models/model_Residual_Network.ckpt
+  informer: synthetic-data/dl_pipeline/saved_models/continued_model_less_no_db_db=False.ckpt
+
+seed: 330159533758566588472678076910300130992
+
+wandb:
+  id: ~
+  entity: space_debri
+  project: Robustness_${test_method}
+  group: ${model.name}
+  mode: online
+  name: ${model.name}_run=${iteration}
+hydra:
+  job:
+    name: ${wandb.group}
+
+trainer:
+  _target_: pytorch_lightning.Trainer
+  accelerator: gpu
+  devices: 1
+  max_epochs: 10
+  log_every_n_steps: 10
+  val_check_interval: 0.5
+
+early_stopping: 6

@@ -1,0 +1,41 @@
+defaults:
+  - data: radar_echo_return_simple_shapes
+  - task: forecast_class
+  - hydra: default
+  # Allow the model to overwrite the settings below
+  - _self_
+  - model: informer_classification
+  #- model: baseline_nn
+  #- model: lstm
+
+note: ""
+
+pretrained_model_path: /nfs/homedirs/breiner/synthetic-data/dl_pipeline/saved_models/best_time_transformer.ckpt
+
+save_model: true
+log_model_to_wandb: true
+
+seed: 330159533758566588472678076910300130993
+eval_testset: true
+
+wandb:
+  id: ~
+  entity: space_debri
+  project: Informer
+  group: long_run
+  mode: online
+  name: less_no_db
+
+hydra:
+  job:
+    name: ${wandb.group}
+
+trainer:
+  _target_: pytorch_lightning.Trainer
+  accelerator: gpu
+  devices: 1
+  max_epochs: 30
+  log_every_n_steps: 10
+  val_check_interval: 0.5
+
+early_stopping: ~

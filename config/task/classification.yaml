@@ -1,0 +1,16 @@
+name: classification
+
+weight_decay: 0.00001
+learning_rate: 0.01
+
+optimizer_type: adam
+
+# linear_warmup
+scheduler_type: step
+
+#gradient_clip_val: 0.25
+gradient_clip_val: 0.0
+
+# only if hidden dimension is 2 before classifier!!!
+feature_plot_2d: false
+feature_plot_umap: false

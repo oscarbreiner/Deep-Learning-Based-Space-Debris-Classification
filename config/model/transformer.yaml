@@ -1,0 +1,10 @@
+name: transformer
+
+num_features: 1
+num_classes: 4
+sequence_length: 501
+dim_feedforward: 2048
+nhead: 8
+num_layers: 8
+embedding_option: conv1d
+embed_dim: 512

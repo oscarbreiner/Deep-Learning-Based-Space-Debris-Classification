@@ -1,0 +1,8 @@
+name: radar_echo_return_simple_shapes
+
+root: config/data/noise
+batch_size: 128
+
+# max_samples_per_class: 20000
+max_samples_per_class: null
+db: true

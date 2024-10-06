@@ -1,0 +1,43 @@
+defaults:
+  - data: radar_echo_return_simple_shapes
+  - task: classification
+  - hydra: default
+  # Allow the model to overwrite the settings below
+  - _self_
+  - model: lstm
+  #- model: baseline_nn
+  #- model: lstm
+
+note: ""
+
+save_model: true
+log_model_to_wandb: true
+
+seed: 330159533758566588472678076910300130992
+eval_testset: true
+
+wandb:
+  id: ~
+  entity: space_debri
+  #project: Residual_Network_4_lyers
+  #project: Baseline_NN
+  project: Informer
+  group: long_run
+  mode: online
+  #name: tuning_lr=${task.learning_rate}_size=${model.hidden_dim}
+  #name: ${model.fc_units}_noise=${model.use_noise}_he=${model.apply_he}_${task.learning_rate}_${task.scheduler_type}_clip=${task.gradient_clip_val}
+  name: fav_but_db_true
+
+hydra:
+  job:
+    name: ${wandb.group}
+
+trainer:
+  _target_: pytorch_lightning.Trainer
+  accelerator: gpu
+  devices: 1
+  max_epochs: 30
+  log_every_n_steps: 10
+  val_check_interval: 0.5
+
+early_stopping: 10

@@ -1,0 +1,16 @@
+defaults:
+  - submitit_slurm
+
+# TODO: Fill in the following fields
+# - partition: [...]
+# - qos: [...]
+# - gres: [...]
+
+cpus_per_task: 4
+mem_gb: 16
+
+# 48 hours
+timeout_min: 2880
+
+# Do not requeue jobs
+max_num_timeout: 0

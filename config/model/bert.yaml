@@ -1,0 +1,8 @@
+name: bert
+
+bert_model_name: bert-base-uncased
+num_classes: 4
+sequence_length: 501
+embedding: conv1d
+# Options: 'dense', 'conv1d', 'lstm'
+  
