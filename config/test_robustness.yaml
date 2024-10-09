@@ -10,17 +10,21 @@ note: ""
 iteration: 1
 
 n_classes: 4
-#test_method: zero_sampling
+
 test_method: cluster_sinusoid
+#test_method: random_dropouts
+#test_method: subsample
+#test_method: percentile_saturation
 
 # Define a map of model types to their respective paths
+# TODO: Update the paths to the trained models
 model_paths:
-  lstm_vanilla: /nfs/homedirs/breiner/synthetic-data/dl_pipeline/saved_models/model_lstm_vanilla.ckpt
-  lstm_bidirectional: /nfs/homedirs/breiner/synthetic-data/dl_pipeline/saved_models/model_lstm_bidirectional.ckpt
-  mlp: /nfs/homedirs/breiner/synthetic-data/dl_pipeline/saved_models/model_MLP_no_dropout.ckpt
-  transformer: "/nfs/homedirs/breiner/synthetic-data/dl_pipeline/saved_models/continued_model_Time_transformer_1e-05_db=True.ckpt"
-  residual_network: /nfs/homedirs/breiner/synthetic-data/dl_pipeline/saved_models/model_Residual_Network.ckpt
-  informer: synthetic-data/dl_pipeline/saved_models/continued_model_less_no_db_db=False.ckpt
+  lstm_vanilla: "insert path here"
+  lstm_bidirectional: "insert path here"
+  mlp: "insert path here"
+  transformer: "insert path here"
+  residual_network: "insert path here"
+  informer: "insert path here"
 
 seed: 330159533758566588472678076910300130992
 

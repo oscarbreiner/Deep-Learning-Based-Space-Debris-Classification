@@ -81,5 +81,14 @@ The simulation data also factors in real-world challenges in the form of **addit
 Overall, this research thesis highlights the potential of deep learning for classifying radar targets, improving the surveillance of space debris and improving the safety of space op- erations. It showcases the application of space-borne radar systems and emphasizes the capabilities of deep learning models in processing complex radar signals.
 
 
+## How to use code
 
+Using Pytorch Lightning framework and hydra to read hyperparameter from config files. logging on wandb and slurm for server
 
+### Run on GPU cluster using slurm:
+
+...
+
+### Run locally
+
+...
