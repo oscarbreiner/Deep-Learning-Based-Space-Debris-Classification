@@ -1,8 +1,10 @@
 # Deep Learning Based Space Debris Classification in Low Earth Orbit Using Space-Borne Radar Simulations
 
-Technical University Munich Bachelor Thesis in Collaberation with Satellite Startup Actlabs
+Technical University Munich Bachelor Thesis
 
 Author: Oscar Breiner
+
+Disclaimer: This version includes minor adjustments made after the original submission for the purpose of improving clarity. The core content remains unchanged.
 
 ## Brief Simulation Overview
 
