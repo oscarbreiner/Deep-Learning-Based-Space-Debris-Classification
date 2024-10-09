@@ -5,8 +5,6 @@ defaults:
   # Allow the model to overwrite the settings below
   - _self_
   - model: lstm
-  #- model: baseline_nn
-  #- model: lstm
 
 note: ""
 
@@ -18,15 +16,11 @@ eval_testset: true
 
 wandb:
   id: ~
-  entity: space_debri
-  #project: Residual_Network_4_lyers
-  #project: Baseline_NN
-  project: Informer
-  group: long_run
-  mode: online
-  #name: tuning_lr=${task.learning_rate}_size=${model.hidden_dim}
-  #name: ${model.fc_units}_noise=${model.use_noise}_he=${model.apply_he}_${task.learning_rate}_${task.scheduler_type}_clip=${task.gradient_clip_val}
-  name: fav_but_db_true
+  entity: ~ 
+  project: ~
+  group: ~
+  mode: ~
+  name: ~
 
 hydra:
   job:

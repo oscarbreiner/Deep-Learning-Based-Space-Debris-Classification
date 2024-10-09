@@ -83,14 +83,16 @@ The simulation data also factors in real-world challenges in the form of **addit
 Overall, this research thesis highlights the potential of deep learning for classifying radar targets, improving the surveillance of space debris and improving the safety of space op- erations. It showcases the application of space-borne radar systems and emphasizes the capabilities of deep learning models in processing complex radar signals.
 
 
-## How to use code
+## How to set up Project
 
-Using Pytorch Lightning framework and hydra to read hyperparameter from config files. logging on wandb and slurm for server
+This project utilizes the PyTorch Lightning framework for model training, Hydra for managing hyperparameters through configuration files, and Weights and Biases (WandB) for logging. It also supports running on different hardware backends, including MPS, CPU, and CUDA (GPU). For execution on a server, SLURM is used for job scheduling.
 
-### Run on GPU cluster using slurm:
+### Example: Running on a GPU Cluster with SLURM
 
-...
+1. **Configure Hyperparameters:** Edit the configuration files to set the desired hyperparameters. These can be found in the `config` directory.
 
-### Run locally
+2. **Set SLURM and WandB Information:** Make sure to configure SLURM and WandB settings in the `train.yaml` and `slurm.yaml` file, including cluster settings and logging credentials.
 
-...
+3. **Launch Training with SLURM:** To run the training job on a GPU cluster using SLURM, use the following command:
+   ```bash
+   ./train.py -m hydra/launcher=slurm model=lstm data.batch_size=128,256
