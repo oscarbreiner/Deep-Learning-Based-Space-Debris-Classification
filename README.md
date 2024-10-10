@@ -96,3 +96,18 @@ This project utilizes the PyTorch Lightning framework for model training, Hydra 
 3. **Launch Training with SLURM:** To run the training job on a GPU cluster using SLURM, use the following command:
    ```bash
    ./train.py -m hydra/launcher=slurm model=lstm data.batch_size=128,256
+
+## Citation
+
+If you use this repository/thesis in your research, please cite it as:
+
+```
+@misc{breiner2024deepspace,
+  author = {Oscar Breiner},
+  title = {Deep Learning Based Space Debris Classification in Low Earth Orbit Using Space-Borne Radar Simulations},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/oscarbreiner/Deep-Learning-Based-Space-Debris-Classification}},
+}
+```
